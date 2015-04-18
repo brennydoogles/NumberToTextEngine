@@ -22,6 +22,7 @@ public class DoubleDigitConverterTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void testConvertDigit() throws Exception {
+        assertEquals(converter.convertDigit(00), "");
         assertEquals(converter.convertDigit(10), "ten");
         assertEquals(converter.convertDigit(11), "eleven");
         assertEquals(converter.convertDigit(12), "twelve");
