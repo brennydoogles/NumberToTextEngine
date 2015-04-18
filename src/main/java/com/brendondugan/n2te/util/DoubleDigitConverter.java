@@ -8,7 +8,7 @@ public class DoubleDigitConverter implements DigitConverter {
     private String[] tenIntervals = {"", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"};
 
     @Override
-    public String convertDigit(int digit) {
+    public String convertDigit(int digit) throws IllegalArgumentException{
         if(digit > 99 || digit < 0){
             throw new IllegalArgumentException("DoubleDigitConverter is intended to work on numbers between 0 and 99");
         }
