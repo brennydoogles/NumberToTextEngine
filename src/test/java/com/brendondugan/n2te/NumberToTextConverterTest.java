@@ -22,10 +22,11 @@ public class NumberToTextConverterTest {
 
     @Test
     public void testConvertNumber() throws Exception {
-        assertTrue(converter.convertNumber(1).equalsIgnoreCase("one"));
-        assertTrue(converter.convertNumber(21).equalsIgnoreCase("twenty one"));
-        assertTrue(converter.convertNumber(105).equalsIgnoreCase("one hundred and five"));
-        assertTrue(converter.convertNumber(56945781).equalsIgnoreCase("fifty six million nine hundred and forty five thousand seven hundred and eighty one"));
-        
+        assertEquals("Conversion works with single digit number", "one", converter.convertNumber(1));
+        assertEquals("Conversion works with double digit number", "twenty one", converter.convertNumber(21));
+        assertEquals("Conversion works with triple digit number", "one hundred and five", converter.convertNumber(105));
+        assertEquals("Conversion works with extremely large numbers", "fifty six million nine hundred and forty five thousand seven hundred and eighty one", converter.convertNumber(56945781));
+        assertEquals("Conversion properly handles the number 0", converter.convertNumber(0), "zero");
+
     }
 }
